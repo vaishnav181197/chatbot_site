@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView,FormView,CreateView
+from django.views.generic import TemplateView,FormView,CreateView,View
 from .forms import *
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
@@ -44,3 +44,10 @@ class SignUpView(CreateView):
     def form_invalid(self, form):
         messages.error(self.request,"Registration Success!!")
         return super().form_invalid(form)
+    
+
+class SignOutView(View):
+    def get(self,request):
+        logout(request)
+        messages.error(request,"Sign Out SuccessFull!!")
+        return redirect('sin')

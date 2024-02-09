@@ -139,8 +139,8 @@
                             <form method="post">
                                 {% csrf_token %}
                                 <input type="text" id="textAreaExample" name="qstn" required class="form-control">
-                                <button class="btn btn-success mt-3">Send</button>
-                                <a href="{% url 'cbot' %}" class="btn btn-info mt-3 me-3">Refresh</a>
+                                <button class="btn mt-3" id="send">Send</button>
+                                <a href="{% url 'cbot' %}" class="btn ref mt-3 me-3">Refresh</a>
                             </form>
 
                         </div>
